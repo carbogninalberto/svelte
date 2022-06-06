@@ -541,7 +541,7 @@ export function set_style(node, key, value, important) {
 export function select_option(select, value) {
 	for (let i = 0; i < select.options.length; i += 1) {
 		const option = select.options[i];
-
+		if (typeof value === 'number') value = String(value)
 		if (option.__value === value) {
 			option.selected = true;
 			return;
